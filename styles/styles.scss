@@ -79,18 +79,33 @@ section{
     background-color: rgb(76, 196, 226);
 }
 
-.active{
+.active {
     display: block;
-    animation: scaleAnim 1s ease-in-out;
-    @keyframes scaleAnim{
-        0%{
-            transform: translateY(-100%) scaleY(0)
-        }
-        100%{
-            transform: translateY(0) scale(1)
-        }
+    animation: slideInFromBottom 1s ease-in-out;
+  }
+  
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);
     }
-}
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+.slide-out-to-top {
+    animation: slideOutToTop 1s ease-in-out forwards; /* The 'forwards' will ensure the end state of animation is retained */
+  }
+  
+@keyframes slideOutToTop {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
 
 //Controls
 .controlls{

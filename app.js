@@ -1,34 +1,36 @@
 const sections = document.querySelectorAll('.section');
-const sectBtns = document.querySelectorAll('.controlls');
-const sectBtn = document.querySelectorAll('.control');
-const allSections = document.querySelectorAll('.main-content');
+const sectBtns = document.querySelectorAll('.control');
+
+function hideAllSectionsExcept(exceptElement) {
+    sections.forEach(section => {
+        if(section !== exceptElement) {
+            section.classList.add('slide-out-to-top');
+            setTimeout(() => {
+                section.classList.remove('active', 'slide-out-to-top');
+            }, 1000); // remove after animation, match this duration with CSS
+        }
+    });
+}
 
 function PageTransitions(){
-    //Button  click active class
-    for (let i = 0; i < sectBtn.length; i++){
-        sectBtn[i].addEventListener('click', function(){
-            let currentBtn = document.querySelectorAll('.active-btn');
-            currentBtn[0].className = currentBtn[0].className.replace('active-btn','');
-            this.className += ' active-btn';
-        })
-    }
-    //Sections Active class
-    allSections.addEventListener('click', (e) => {
-        const id = e.target.dataset.id;
-        if(id){
-            //remove selected from the other btns
-            sectBtns.forEach=((btn) =>{
-                btn.classList.remove('active');
-            })
-            e.target.classList.add('active');
-
-            //hide other section
-            sections.forEach((sectonr)=>{
-                sections.classList.remove('active');
-            })
+    // Button click handler
+    sectBtns.forEach(btn => {
+        btn.addEventListener('click', function(){
+            // Remove active class from all buttons
+            sectBtns.forEach(b => b.classList.remove('active-btn'));
+            
+            // Add active class to clicked button
+            this.classList.add('active-btn');
+            
+            // Hide all sections
+            const id = this.dataset.id;
             const element = document.getElementById(id);
-            element.classList.add('active');        }
-    })
+            hideAllSectionsExcept(element);
+            
+            // Show the corresponding section
+            element.classList.add('active');
+        });
+    });
 }
 
 PageTransitions();
