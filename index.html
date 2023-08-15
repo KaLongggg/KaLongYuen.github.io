@@ -1,41 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ka Long's Profolio</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body class="main-content">
-    <header class="section sec1 header active" id="home">
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    </header>
-    <main>
-        <section class="section sec2 about" id="about"></section>
-        <section class="section sec3 portfolio" id="portfolio"></section>
-        <section class="section sec4 contact" id="contact"></section>
-    </main>
-    <div class="controlls">
-        <div class="control control-1 active-btn" data-id="home">
-            <i class="fa fa-home"></i>
-        </div>    
-        <div class="control control-2" data-id="about">
-            <i class="fa fa-user"></i>
-        </div>
-        <div class="control control-3" data-id="portfolio">
-            <i class="fa fa-file-text"></i>
-        </div>
-        <div class="control control-4" data-id="contact">
-            <i class="fa fa-address-card"></i>
-        </div>
-    </div>
+        <!--====================FAVICON====================-->
+        <link rel="shortcut icon" href="assets\img\favicon\favicon-32x32.png" type="image/x-icon">
+        <!--====================REMIXICONS====================-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" integrity="sha512-HXXR0l2yMwHDrDyxJbrMD9eLvPe3z3qL3PPeozNTsiHJEENxx8DH2CxmV05iwG0dwoz5n4gQZQyYLUNt1Wdgfg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--==================== CSS =======================-->
+        <link rel="stylesheet" href="assets/styles/styles.css">
 
-    <script src="app.js"></script>
-</body>
-</html>
+        <title>Portfolio Website - Ka Long Yuen</title>
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav container">
+                <a href="#" class="nav__logo">
+                <span class="nav__logo-circle">K</span>
+                <span class="nav__logo-name">Ka Long</span>
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                <span class="nav__title">Menu</span>
 
+                <h3 class="nav__name">Ka Long</h3>
+
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about_me" class="nav__link">About me</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#projects" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact_me" class="nav__link">Contact me</a>
+                    </li>
+                </ul>
+
+                <!--======Close button======-->
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+            <div class="nav__buttons">
+                <!-- Toggle Button -->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-2-fill"></i>
+                </div>
+            </div>
+            </nav>
+        </header>
+
+
+
+    </body>
+    <script src="assets/js/app.js"></script>
+    </html>
