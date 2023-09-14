@@ -35,6 +35,9 @@
     --name-text-color:    #EEF5DB;
     --gray-color:           #909090;
     --p-color:              #7d7a7a;
+    --active-color:      #f7e754;
+    --download-color:      #b5bd5b;
+    --download-btn-text-color: #995757;
 
     --base-font-family:     "Plain", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     --body-font: "Bai Jamjuree", sans-serif;
@@ -113,7 +116,7 @@
   }
 
   .section-padding {
-    padding: 6rem 0;
+    padding: 0rem 0;
   }
 
   .custom-icon {
@@ -172,8 +175,6 @@
     text-decoration: none;
   }
 
-
-
   /*---------------------------------------
      MENU                
   -----------------------------------------*/
@@ -204,14 +205,21 @@
   }
 
   .navbar .custom-btn {
-    background: var(--primary-color);
-    color: var(--dark-color);
+    background: var(--download-color);
+    color: #71595b;
+    padding: 10px 20px; /* Adjust as needed */
+    border:#909090;
+    border-radius: 10px; /* You can adjust this for a more rounded or sharp corner */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    cursor: pointer; /* Changes mouse cursor to a hand pointer */
+    font-weight: 600; /* Makes text a bit bolder */
   }
 
   .contact-form #submit-button:hover,
   .navbar .custom-btn:hover {
-    background: var(--dark-color);
-    color: var(--name-text-color);
+    background: #9fa950; /* Slightly darker color for hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow is more pronounced on hover */
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
@@ -221,16 +229,16 @@
 
   .nav-item .nav-link.active, 
   .nav-item .nav-link:hover {
-    color: var(--gray-color);
+    color: var(--active-color);
   }
 
   .nav-item .nav-link.active, 
   .nav-item .nav-link:hover {
-    border-bottom-color: var(--primary-color);
+    border-bottom-color: var(--active-color);
   }
 
   .nav-link {
-    color: var(--gray-color);
+    color: var(--white-color);
     font-weight: var(--font-weight-light);
     font-size: var(--base-font-size);
     border-bottom: 1px solid transparent;
@@ -313,16 +321,16 @@
     background: var(--dark-color);
     border-radius: var(--border-radius-medium);
     color: var(--name-text-color);
-    display: inline-block;
+    display: inline-flex;
     margin: 0.5rem 0;
-    padding: 0.5rem 2rem 1.5rem 2rem;
-	font-size: 2.2em;
+    padding: 0.5rem 2rem 1.0rem 2rem;
+	  font-size: 2.2em;
   }
 
   .email-link {
     background: var(--primary-color);
     color: var(--white-color);
-    font-size: var(--h4-font-size);
+    font-size: var(--h1-font-size);
     padding: 0.5rem 2rem 1rem 2rem;
   }
 
@@ -335,7 +343,11 @@
   /*---------------------------------------
      ABOUT                
   -----------------------------------------*/
-  
+  .about{
+    padding-top: 3rem;
+    background-color: #fffcd85e;
+  }
+
   .about-third {
 	  margin: 2.2em -0.8em;
   }
@@ -361,82 +373,11 @@
   }
 
   /*---------------------------------------
-     FAQ                 
-  -----------------------------------------*/
-
-  .faq .card-header {
-    padding: 0;
-  }
-
-  .faq .btn-link {
-    color: var(--dark-color);
-    font-size: var(--h6-font-size);
-    text-align: left;
-    display: block;
-    width: 100%;
-    padding: 1rem 2rem;
-  }
-
-  .faq .btn-link:focus, 
-  .faq .btn-link:hover {
-    color: var(--dark-color);
-    text-decoration: none;
-  }
-
-  .faq .card-body {
-    padding: 2rem;
-  }
-
-  .faq-info-text {
-    font-size: var(--base-font-size);
-    display: block;
-    margin: 1.5rem 2rem 0 2rem;
-  }
-
-
-  /*---------------------------------------
-     TESTIMONIALS               
-  -----------------------------------------*/
-
-  .testimonials {
-    background: #f9f9f9;
-  }
-
-  .testimonials-image {
-    margin: 0 1rem 1rem 1rem;
-  }
-
-  .testimonials-image img {
-    border-radius: var(--border-radius-medium);
-  }
-
-  .testimonials-info {
-    width: 100%;
-  }
-
-  .testimonials .owl-theme .owl-nav.disabled+.owl-dots {
-    margin-top: 2rem;
-  }
-
-  .testimonials .owl-theme .owl-dots .owl-dot {
-    outline: none;
-  }
-
-  .testimonials .owl-theme .owl-dots .owl-dot span {
-    width: 30px;
-    height: 3px;
-    margin: 5px;
-  }
-
-  .testimonials .owl-theme .owl-dots .owl-dot.active span, 
-  .testimonials .owl-theme .owl-dots .owl-dot:hover span {
-    background: var(--primary-color);
-  }
-
-  /*---------------------------------------
      CONTACT               
   -----------------------------------------*/
-  
+  .contact{
+    padding-bottom: 20px;
+  }
   .contact-form .form-control {
     background: transparent;
     border: none;
@@ -611,6 +552,9 @@
       position: relative;
       top: 1.5rem;
       padding-left: 15px;
+    }
+    .hero {
+      padding-bottom: 10%;
     }
   }
 
