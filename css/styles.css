@@ -66,10 +66,12 @@
   }
 
   .container {
-    padding-left: 0; 
+    padding-left: 0;
+    
 }
   .row{
     padding-left: 0; 
+    
   }
 
 
@@ -147,6 +149,11 @@
     background: var(--primary-color);
   }
 
+  .download-btn{
+    width: 8rem;
+    height:auto;
+  }
+
 
   /*---------------------------------------
      GENERAL               
@@ -206,22 +213,31 @@
   }
 
   .navbar .custom-btn {
-    background: var(--download-color);
+    background: #dfd87ed7;
     color: #71595b;
-    padding: 10px 20px; /* Adjust as needed */
-    border:#909090;
-    border-radius: 10px; /* You can adjust this for a more rounded or sharp corner */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    cursor: pointer; /* Changes mouse cursor to a hand pointer */
-    font-weight: 600; /* Makes text a bit bolder */
-  }
+    padding: 8px 10px; /* Slightly increased for better visibility */
+    border-radius: 10px; /* Subtle curve, not too round */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08); /* Reduced the shadow for a subtle effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Only transitioning necessary properties */
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase; /* Making text uppercase can sometimes add a touch of professionalism */
+    letter-spacing: 0.8px; /* Slightly spaced letters for better legibility */
+    outline: none; /* Removes the default browser outline */
+}
 
-  .contact-form #submit-button:hover,
-  .navbar .custom-btn:hover {
-    background: #9fa950; /* Slightly darker color for hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow is more pronounced on hover */
-  }
+.navbar .custom-btn:focus, /* Added a focus state */
+.navbar .custom-btn:active { /* Added an active state */
+    transform: scale(0.98); /* Slightly reduces size on press or focus */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on focus/active */
+}
+
+.navbar .custom-btn:hover {
+    background: #b8b268d7; 
+    transform: scale(1.02); /* Slight enlargement on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* Increased shadow a bit on hover */
+}
+
 
   .navbar-expand-lg .navbar-nav .nav-link {
     margin: 0 1.5rem;
@@ -456,7 +472,8 @@
   -----------------------------------------*/
   .contact{
     padding-bottom: 20px;
-    padding-top: 0rem;
+    padding-top: 1rem;
+    background-color: #faf5f5b2;
   }
   .contact .hero-title{
     background: #16359bc2;
@@ -575,7 +592,7 @@
   .social-links a {
     display: inline-block;
     color: var(--p-color);
-    font-size: var(--h6-font-size);
+    font-size: var(--h2-font-size);
     margin: 5px 20px 5px 0;
   }
 
@@ -643,7 +660,9 @@
     }
     .hero {
       padding-bottom: 10%;
+      padding-right: 0px;
     }
+
   }
   @media screen and (max-width: 576px) {
 
