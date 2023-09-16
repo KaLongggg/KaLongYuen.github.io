@@ -84,6 +84,7 @@
   h1,
   h3 {
     font-weight: var(--font-weight-light);
+    color: #010101b2;
   }
 
   h2 {
@@ -346,6 +347,7 @@
   .about{
     padding-top: 3rem;
     background-color: #fffcd85e;
+    border-top: 1px solid #44381588;
   }
 
   .about-third {
@@ -354,7 +356,8 @@
 
   .about-image {
     border-radius: var(--border-radius-small);
-  }
+    border: 5px solid rgba(241, 239, 239, 0.432);
+}
 
   .profile-list li {
     margin: 0.3rem 0;
@@ -371,7 +374,62 @@
   .detail{
     justify-content: left;
   }
+  .honour-text {
+    color: rgb(172, 43, 43);
+}
+.major {
+  font-weight: 600;  /* Makes the major slightly bold for emphasis */
+  color: #333;      /* A darker color for emphasis, you can adjust as needed */
+}
+.experience-section h4 {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #555;
+}
 
+.experience-section .experience-section {
+  font-size: 0.9rem;
+  color: #575353;
+  margin-top: 3px;
+}
+
+.date{
+  font-size: 0.9rem;
+  margin-top: 3px;
+  color:rgb(78, 88, 110)
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+}
+
+.company-logo {
+  width: auto;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.company-info span {
+  font-weight: bold;
+}
+.company-text{
+  color:#832e2ef1;
+}
+.company-text a {
+  color: inherit; /* Use the same color as the surrounding text */
+  text-decoration: none; /* Remove underline */
+}
+.company-text a:hover {
+  text-decoration: underline; /* Add underline on hover */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+}
+.role{
+  color: #00113db2
+}
+.job-duties{
+  font-size: 0.9rem;
+}
   /*---------------------------------------
      CONTACT               
   -----------------------------------------*/
@@ -557,7 +615,12 @@
       padding-bottom: 10%;
     }
   }
+  @media screen and (max-width: 576px) {
 
+    .about {
+      padding-left: 10px;
+    }
+  }
   @media screen and (max-width: 480px) {
 
     .hero-title {
