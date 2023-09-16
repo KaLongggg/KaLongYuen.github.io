@@ -92,7 +92,7 @@
             <div class="row">
 
                 <div class="col-lg-6 col-md-6 col-12">
-                    <div><h1 class="hero-title"><i class="ri-user-2-fill"></i>&nbsp;About Me </h1></div>
+                    <h1 class="hero-title"><i class="ri-article-line"></i>&nbsp;About Me </h1>
                     <ul class="mt-4 mb-5 mb-lg-0 profile-list list-unstyled">
                         <li>
                             <div class="label"><strong>Full Name :</strong></div>
@@ -167,7 +167,9 @@
         </div>
     </section>
     <section class="experience section-padding" id="experience">
+        
       <div class="container">
+        <h1 class="hero-title"><i class="ri-building-line"></i>&nbsp;Working Experience</h1>
         <div class="row experience-section">
 
             <!-- Experience 1: Mathit.hk -->
@@ -209,7 +211,7 @@
      <section class="contact section-padding" id="contact">
       <div class="container">
         <div class="row">
-
+            <h1 class="hero-title"><i class="ri-contacts-book-line"></i>&nbsp;Contact</h1>
           <div class="col-lg-6 col-md-6 col-11">
             <form id="contactForm" class="contact-form webform" role="form">
                 
@@ -280,7 +282,7 @@
         // Send email using EmailJS
         emailjs.sendForm("service_94pwgww","template_x37ev8s", this)
             .then(function() {
-                alert('Message sent successfully!');
+                alert('Message sent successfully! Ka Long will receive your email and reply to you shortly.');
             }, function(error) {
                 alert('Error sending email: ' + JSON.stringify(error));
             });

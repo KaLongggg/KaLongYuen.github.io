@@ -327,7 +327,14 @@
     padding: 0.5rem 2rem 1.0rem 2rem;
 	  font-size: 2.2em;
   }
+  .about .hero-title{
+    background: #321c3fb2;
+    margin: 0rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 1.3em;
+    color: #ffffff;
 
+  }
   .email-link {
     background: var(--primary-color);
     color: var(--white-color);
@@ -345,9 +352,8 @@
      ABOUT                
   -----------------------------------------*/
   .about{
-    padding-top: 3rem;
+    padding-top: 1rem;
     background-color: #fffcd85e;
-    border-top: 1px solid #44381588;
     padding-bottom: 1rem;
   }
 
@@ -396,7 +402,7 @@
 
 .experience{
   padding-top: 1rem;
-  background-color:#7a9f9d09;
+  background-color:#b5e2e025;
 }
 
 .date{
@@ -431,10 +437,19 @@
   cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
 }
 .role{
-  color: #00113db2
+  color: #00113db2;
+  font-size: 1.6rem;
 }
 .job-duties{
   font-size: 0.9rem;
+}
+.experience .hero-title{
+  background: #db611ae3;
+  margin: 0rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  font-size: 1.3em;
+  color: #ffffff;
+  margin-bottom: 10px;
 }
   /*---------------------------------------
      CONTACT               
@@ -442,6 +457,14 @@
   .contact{
     padding-bottom: 20px;
     padding-top: 0rem;
+  }
+  .contact .hero-title{
+    background: #16359bc2;
+    margin: 1rem;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-bottom: 10px;
   }
   .contact-form .form-control {
     background: transparent;
