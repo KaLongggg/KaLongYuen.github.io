@@ -63,6 +63,7 @@
 
   body {
     font-family: var(--body-font);
+    padding-top: 55px;
   }
 
   .container {
@@ -188,23 +189,27 @@
   -----------------------------------------*/
 
   .navbar {
-    background: transparent;
-    padding: 0.3rem 1rem;
+    background: var(--menu-bg-color);
+    padding: 0.5rem 1rem;
     transition: all 300ms ease-in-out;
     position: absolute;
     z-index: 99;
     top: 0;
     right: 0;
     left: 0;
-    opacity: 0;
+    position: fixed;
+    opacity: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
-  .navbar.scroll {
+  /* .navbar.scroll {
     background: var(--menu-bg-color);
     padding: 0.5rem 1rem;
     position: fixed;
     opacity: 1;
-  }
+  } */
+
 
   .navbar-brand {
     color: var(--white-color);
@@ -215,8 +220,7 @@
   .navbar .custom-btn {
     background: #dfd87ed7;
     color: #71595b;
-    padding: 8px 10px; /* Slightly increased for better visibility */
-    border-radius: 10px; /* Subtle curve, not too round */
+    padding: 8px 14px; /* Slightly increased for better visibility */
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08); /* Reduced the shadow for a subtle effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Only transitioning necessary properties */
     cursor: pointer;
@@ -340,8 +344,9 @@
     color: var(--name-text-color);
     display: inline-flex;
     margin: 0.5rem 0;
-    padding: 0.5rem 2rem 1.0rem 2rem;
-	  font-size: 2.2em;
+    padding: 0.5rem 2rem 0.7rem 2rem;
+	  font-size: 2.0em;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
   .about .hero-title{
     background: #321c3fb2;
@@ -355,12 +360,12 @@
     background: var(--primary-color);
     color: var(--white-color);
     font-size: var(--h1-font-size);
-    padding: 0.5rem 2rem 1rem 2rem;
+    padding: 0.5rem 1.5rem 0.7rem 1.5rem;
   }
 
   .email-link:hover {
     background: var(--dark-color);
-    color: var(--white-color);
+    color: var(--active-color);
   }
 
 
@@ -368,7 +373,7 @@
      ABOUT                
   -----------------------------------------*/
   .about{
-    padding-top: 1rem;
+    padding-top: 2rem;
     background-color: #fffcd85e;
     padding-bottom: 1rem;
   }
@@ -417,7 +422,7 @@
 }
 
 .experience{
-  padding-top: 1rem;
+  padding-top: 2rem;
   background-color:#b5e2e025;
 }
 
@@ -467,17 +472,76 @@
   color: #ffffff;
   margin-bottom: 10px;
 }
+
+
+/* -----------------------------------------PROJECT--------------------------------------- */
+.project{
+  padding-bottom: 20px;
+  padding-top: 2rem;
+  background-color: #f3f3e5b2;
+}
+.project .hero-title{
+  background: #5c0d32e3;
+  margin: 0rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  font-size: 1.3em;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.project-item {
+  position: relative;
+  overflow: hidden; /* This ensures that our hover overlay doesn't exceed the image boundaries */
+  margin-bottom: 30px; /* Space between projects */
+}
+
+.project-image {
+  width: 100%;
+  transition: transform 0.3s ease; /* This adds a subtle zoom effect on hover */
+  border-radius: 20px;
+}
+
+.project-info {
+  padding-left: 10px;
+  position: absolute;
+  top: 0;
+  left: 10;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);  /* Semi-transparent black overlay */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Start as transparent */
+  transition: opacity 0.3s ease; /* Fade in effect */
+  border-radius: 20px;
+}
+
+.project-info h3 {
+  margin: 10px 0;
+}
+
+.project-item:hover .project-info {
+  opacity: 1; /* On hover, make the info visible */
+  
+}
+
+.project-item:hover .project-image {
+  transform: scale(1.1); /* Slight zoom on the image */
+}
+
+
   /*---------------------------------------
      CONTACT               
   -----------------------------------------*/
   .contact{
     padding-bottom: 20px;
-    padding-top: 1rem;
+    padding-top: 2rem;
     background-color: #faf5f5b2;
   }
   .contact .hero-title{
     background: #16359bc2;
-    margin: 1rem;
     padding: 0.5rem 2rem 0.5rem 2rem;
     font-size: 1.3em;
     color: #ffffff;
@@ -565,10 +629,23 @@
     font-size: var(--p-font-size);
     line-height: 0;
     margin-top: 2.5rem;
-    padding: 1.5rem 1.8rem 1.8rem 1.8rem;
+    padding: 1.4rem 1.2rem 1.5rem 1.2rem;
     white-space: nowrap;
     max-width: 190px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease;
   }
+
+  .contact-form #submit-button:hover {
+    /* Darken the background a bit on hover, this assumes your --primary-color is a light color */
+    background: #425357; /* CSS functions like 'darken' come from pre-processors like SASS. If you're not using SASS, you'll have to manually specify a slightly darker color. */
+    
+    /* Slightly scale the button up for a pop effect */
+    transform: scale(1.05);
+    
+    /* Optionally, you can also reduce the box shadow on hover for a "pressed" effect */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
 
   .copyright-text {
     font-size: var(--base-font-size);
@@ -631,7 +708,7 @@
 
     .hero-title {
       font-size: 1.8em;
-      padding-bottom: 1rem;
+      padding: 0.5rem 2rem 0.7rem 2rem;
     }
 
     .email-link {
@@ -679,6 +756,28 @@
 
     .email-link {
       font-size: 20px;
+      padding: 0.3rem 2rem 0.6rem 2rem;
+    }
+  }
+  @media screen and (max-width: 396px) {
+
+    .hero-title {
+      font-size: 20px;
+    }
+
+    .email-link {
+      font-size: 18px;
+      padding: 0.3rem 2rem 0.6rem 2rem;
+    }
+  }
+  @media screen and (max-width: 327px) {
+
+    .hero-title {
+      font-size: 18px;
+    }
+
+    .email-link {
+      font-size: 16px;
       padding: 0.3rem 2rem 0.6rem 2rem;
     }
   }
