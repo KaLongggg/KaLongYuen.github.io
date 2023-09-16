@@ -348,6 +348,7 @@
     padding-top: 3rem;
     background-color: #fffcd85e;
     border-top: 1px solid #44381588;
+    padding-bottom: 1rem;
   }
 
   .about-third {
@@ -393,6 +394,11 @@
   margin-top: 3px;
 }
 
+.experience{
+  padding-top: 1rem;
+  background-color:#7a9f9d09;
+}
+
 .date{
   font-size: 0.9rem;
   margin-top: 3px;
@@ -435,6 +441,7 @@
   -----------------------------------------*/
   .contact{
     padding-bottom: 20px;
+    padding-top: 0rem;
   }
   .contact-form .form-control {
     background: transparent;
@@ -444,7 +451,7 @@
     border-radius: 0;
     -webkit-appearance: none;
     outline: none;
-    color: var(--white-color);
+    color: #333;
     font-weight: var(--font-weight-light);
     padding-left: 0;
     cursor: text;
@@ -617,9 +624,10 @@
   }
   @media screen and (max-width: 576px) {
 
-    .about {
+    .about, .experience, .contact{
       padding-left: 10px;
     }
+    
   }
   @media screen and (max-width: 480px) {
 

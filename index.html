@@ -92,8 +92,7 @@
             <div class="row">
 
                 <div class="col-lg-6 col-md-6 col-12">
-                    <h3 class="mb-4">About Me</h3>
-
+                    <div><h1 class="hero-title"><i class="ri-user-2-fill"></i>&nbsp;About Me </h1></div>
                     <ul class="mt-4 mb-5 mb-lg-0 profile-list list-unstyled">
                         <li>
                             <div class="label"><strong>Full Name :</strong></div>
@@ -207,54 +206,51 @@
         </div>
       </div>
   </section>
-     <section class="contact section-padding pt-0" id="contact">
+     <section class="contact section-padding" id="contact">
       <div class="container">
         <div class="row">
 
           <div class="col-lg-6 col-md-6 col-11">
-            <form action="#" method="get" class="contact-form webform"  role="form">
+            <form id="contactForm" class="contact-form webform" role="form">
                 
                 <div class="form-group d-flex flex-column-reverse">
-                    <input type="text" class="form-control" name="cf-name" id="cf-name" placeholder="Your Name">
+                    <input type="text" class="form-control" name="user-name" id="user-name" placeholder="Your Name">
 
-                    <label for="cf-name" class="webform-label">Full Name</label>
+                    <label for="user-name" class="webform-label">Full Name</label>
                 </div>
 
                 <div class="form-group d-flex flex-column-reverse">
-                    <input type="email" class="form-control" name="cf-email" id="cf-email" placeholder="Your Email">
+                    <input type="email" class="form-control" name="user-email" id="user-email" placeholder="Your Email">
 
-                    <label for="cf-email" class="webform-label">Your Email</label>
+                    <label for="user-email" class="webform-label">Your Email</label>
                 </div>
 
                 <div class="form-group d-flex flex-column-reverse">
-                    <textarea class="form-control" rows="5" name="cf-message" id="cf-message" placeholder="Your Message"></textarea>
+                    <textarea class="form-control" rows="5" name="message" id="message" placeholder="Your Message"></textarea>
 
-                    <label for="cf-message" class="webform-label">Message</label>
+                    <label for="message" class="webform-label">Message</label>
                 </div>
 
-                <button type="submit" class="form-control" id="submit-button" name="submit">Send</button>
+                <button type="submit" class="form-control" id="submit-button" name="submit" value="Send">Send</button>
             </form>
           </div>
 
             <div class="mx-auto col-lg-4 col-md-6 col-11" id = "contact">
                 <h3 class="my-4 pt-4 pt-lg-0">Say hello to me!</h3>
 
-                <p class="mb-1">Australia: +61 4 0220 7318</p>
-                <p class="mb-1">Hong Kong: +852 6741 2231</p>
+                <p class="mb-1"><i class="ri-phone-line"></i> Australia: +61 4 0220 7318</p>
+                <p class="mb-1"><i class="ri-phone-line"></i> Hong Kong: +852 6741 2231</p>
 
                 <p>
-                    <a href="#">
-                        kalong551@gmail.com
-                    <i class="fas fa-arrow-right custom-icon"></i>
+                    <a href="mailto:kalong551@gmail.com?subject=Subject Here&body=Message Body Here">
+                        <i class="ri-mail-send-line"></i> kalong551@gmail.com
+                        <i class="fas fa-arrow-right custom-icon"></i>
                     </a>
                 </p>
 
                 <ul class="social-links mt-2">
-                    <li><a href="#" rel="noopener" class="fab fa-facebook"></a></li>
-                    <li><a href="#" rel="noopener" class="fab fa-twitter"></a></li>
-                    <li><a href="#" rel="noopener" class="fab fa-instagram"></a></li>
-                    <li><a href="#" rel="noopener" class="fab fa-linkedin"></a></li>
-                    <li><a href="#" rel="noopener" class="fab fa-youtube"></a></li>
+                    <li><a href="https://www.linkedin.com/in/ka-long-yuen-39393b239/" rel="noopener" class="fab fa-linkedin" target="_blank"></a></li>
+                    <li><a href="https://github.com/KaLongggg" rel="noopener" class="fab fa-github" target="_blank"></a></li>
                 </ul>
             </div>
 
@@ -270,3 +266,23 @@
 
 </body>
 </html>
+<!-- EmailJS library -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script>
+    // Initialize EmailJS
+    emailjs.init("jyrVWemYcbcRMxS8e");  // Replace with your EmailJS user ID
+
+    // Attach event listener to your form
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Send email using EmailJS
+        emailjs.sendForm("service_94pwgww","template_x37ev8s", this)
+            .then(function() {
+                alert('Message sent successfully!');
+            }, function(error) {
+                alert('Error sending email: ' + JSON.stringify(error));
+            });
+    });
+</script>
