@@ -354,6 +354,7 @@
     padding: 0.5rem 2rem 0.5rem 2rem;
     font-size: 1.3em;
     color: #ffffff;
+    margin-bottom: 1rem;
 
   }
   .email-link {
@@ -375,7 +376,7 @@
   .about{
     padding-top: 2rem;
     background-color: #fffcd85e;
-    padding-bottom: 1rem;
+    padding-bottom: 5rem;
   }
 
   .about-third {
@@ -424,6 +425,7 @@
 .experience{
   padding-top: 2rem;
   background-color:#b5e2e025;
+  padding-bottom: 5rem;
 }
 
 .date{
@@ -470,7 +472,7 @@
   padding: 0.5rem 2rem 0.5rem 2rem;
   font-size: 1.3em;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
 }
 
 
@@ -479,6 +481,7 @@
   padding-bottom: 20px;
   padding-top: 2rem;
   background-color: #f3f3e5b2;
+  padding-bottom: 5rem;
 }
 .project .hero-title{
   background: #5c0d32e3;
@@ -486,50 +489,55 @@
   padding: 0.5rem 2rem 0.5rem 2rem;
   font-size: 1.3em;
   color: #ffffff;
-  margin-bottom: 10px;
+  margin-bottom: 2rem;
 }
 .project-item {
   position: relative;
-  overflow: hidden; /* This ensures that our hover overlay doesn't exceed the image boundaries */
-  margin-bottom: 30px; /* Space between projects */
+  overflow: hidden;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .project-image {
   width: 100%;
-  transition: transform 0.3s ease; /* This adds a subtle zoom effect on hover */
+  transition: transform 0.3s ease;
   border-radius: 20px;
 }
 
 .project-info {
+  margin-left: 15px;
+  margin-right: 15px;
   padding-left: 10px;
+  padding-right: 10px;
   position: absolute;
   top: 0;
-  left: 10;
+  left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);  /* Semi-transparent black overlay */
+  background: rgba(0, 0, 0, 0.8);  
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  opacity: 0; /* Start as transparent */
-  transition: opacity 0.3s ease; /* Fade in effect */
+  opacity: 0;
+  transition: opacity 0.3s ease;
   border-radius: 20px;
 }
+.project-item, .project-info {
+  box-sizing: border-box;
+}
 
-.project-info h3 {
-  margin: 10px 0;
+.project-info {
+  color: #ccb656;
+  font-size: 1.2rem; /* This is a fallback size */
 }
 
 .project-item:hover .project-info {
-  opacity: 1; /* On hover, make the info visible */
-  
+  opacity: 1;
 }
 
-.project-item:hover .project-image {
-  transform: scale(1.1); /* Slight zoom on the image */
-}
+
 
 
   /*---------------------------------------
@@ -545,7 +553,7 @@
     padding: 0.5rem 2rem 0.5rem 2rem;
     font-size: 1.3em;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 2rem;
   }
   .contact-form .form-control {
     background: transparent;
@@ -743,7 +751,7 @@
   }
   @media screen and (max-width: 576px) {
 
-    .about, .experience, .contact{
+    .about, .experience, .contact, .project{
       padding-left: 10px;
     }
     
@@ -768,6 +776,15 @@
     .email-link {
       font-size: 18px;
       padding: 0.3rem 2rem 0.6rem 2rem;
+    }
+  }
+  @media screen and (max-width: 347px) {
+
+    .project-info h3{
+      margin-top: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 1.3rem;
     }
   }
   @media screen and (max-width: 327px) {
