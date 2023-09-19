@@ -212,7 +212,14 @@
     <div class="container">
         <h1 class="hero-title"><i class="ri-code-box-line"></i>&nbsp;Project</h1>
         <div class="row">
-
+            <div class="col-md-4 project-item" id="leetcode-project">
+                <a href="https://leetcode.com/KaLongYuen/" target="_blank">
+                    <img src="images/project/leetcode.png" alt="leetcode" class="project-image">
+                    <div class="project-info">
+                        <canvas id="leetcodeChart" width="150" height="300" style="color:aliceblue; padding: 20px 20px 20px 20px;"></canvas>
+                    </div>
+                </a>
+            </div>
             <!-- Sample project -->
             <div class="col-md-4 project-item">
                 <a href="https://github.com/KaLongggg/BoTour" target="_blank">
@@ -240,7 +247,7 @@
                 </a>
             </div>
             <div class="col-md-4 project-item">
-                <a href="mathit_hk.html" target="_blank">
+                <a href="http://mathit.hk" target="_blank">
                     <img src="images/project/mathit.png" alt="mathit" class="project-image">
                     <div class="project-info">
                         Mathit.hk Online Platform Development
@@ -255,7 +262,7 @@
                     </div>
                 </a>
             </div>
-
+            
             <!-- You can add more projects in similar blocks -->
             
         </div>
@@ -344,3 +351,50 @@
             });
     });
 </script>
+<script>
+    const leetcodeUsername = 'KaLongYuen'; 
+    
+    fetch(`https://leetcode-stats-api.herokuapp.com/${leetcodeUsername}`)
+    .then(response => response.json())
+    .then(data => {
+        console.log("Fetched LeetCode Data:", data); 
+    
+        if(data.status === "success") {
+            // Data for Chart.js
+            const chartData = {
+                labels: ['Easy', 'Medium', 'Hard'],
+                datasets: [{
+                    label: 'Number of Problems Solved',
+                    data: [data.easySolved, data.mediumSolved, data.hardSolved],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(255, 99, 132, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+    
+            // Render the chart
+            const ctx = document.getElementById('leetcodeChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: chartData,
+                options: {
+                    responsive: true,
+                }
+            });
+    
+        } else {
+            console.error("Error in LeetCode API response:", data.message);
+        }
+    })
+    .catch(error => console.error('Error fetching LeetCode data:', error));
+    </script>
+    
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
